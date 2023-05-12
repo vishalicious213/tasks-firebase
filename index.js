@@ -148,6 +148,16 @@ function renderSection(section) {
                 shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
             }
         })
+
+        onValue(bulkListInDB, function(snapshot) {
+            if (snapshot.exists()) {
+                let bulkArray = Object.entries(snapshot.val())
+                updateCurrentList(bulkArray)
+                renderShoppingCart(bulkArray)
+            } else {
+                bulkList.innerHTML = `<div id="cart-empty">Add an item to your bulk cart</div>`
+            }
+        })
     }
 
     if (section === "todo") {
