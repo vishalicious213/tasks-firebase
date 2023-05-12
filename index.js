@@ -22,6 +22,7 @@ const todoSection = document.getElementById("to-do-section")
 const noteSection = document.getElementById("notes-section")
 
 let currentList = []
+let currentBulkList = []
 
 // ⬇️ HELPER FUNCTIONS ⬇️
 
@@ -29,6 +30,12 @@ let currentList = []
 function updateCurrentList(list) {
     currentList = []
     list.forEach(item => currentList.push(item[1]))
+}
+
+// keep a current list of bulk item names (to check for duplicates)
+function updateCurrentBulkList(list) {
+    currentBulkList = []
+    list.forEach(item => currentBulkList.push(item[1]))
 }
 
 // ⬇️ EVENT LISTENERS ⬇️
@@ -152,7 +159,7 @@ function renderSection(section) {
         onValue(bulkListInDB, function(snapshot) {
             if (snapshot.exists()) {
                 let bulkArray = Object.entries(snapshot.val())
-                updateCurrentList(bulkArray)
+                updateCurrentBulkList(bulkArray)
                 renderShoppingCart(bulkArray)
             } else {
                 bulkList.innerHTML = `<div id="cart-empty">Add an item to your bulk cart</div>`
