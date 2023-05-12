@@ -8,6 +8,7 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shopping-list")
+const bulkListInDB = ref(database, "bulk-list")
 
 // app elements
 const nav = document.getElementById("nav")
@@ -88,6 +89,21 @@ function addToCart() {
 function removeFromCart(item) {
     const itemToRemove = ref(database, `shopping-list/${item}`)
     remove(itemToRemove)
+}
+
+// add item to bulk shopping cart
+function addToBulk() {
+    // check for duplicates
+    if (currentList.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
+        shopInput.value = ""
+        return
+    }
+
+    // add to bulk cart if not duplicate
+    if (shopInput.value) {
+        push(bulkListInDB, shopInput.value)
+        shopInput.value = ""
+    }
 }
 
 // ⬇️ RENDER APP ⬇️
