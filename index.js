@@ -13,6 +13,9 @@ const shoppingListInDB = ref(database, "shopping-list")
 const nav = document.getElementById("nav")
 const main = document.getElementById("main")
 const title = document.getElementById("title")
+const shopSection = document.getElementById("shop-section")
+const todoSection = document.getElementById("to-do-section")
+const noteSection = document.getElementById("notes-section")
 
 // ⬇️ EVENT LISTENERS ⬇️
 
