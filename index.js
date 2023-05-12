@@ -14,7 +14,7 @@ const nav = document.getElementById("nav")
 const main = document.getElementById("main")
 const title = document.getElementById("title")
 const shopSection = document.getElementById("shop-section")
-const shopInput = document.getElementById("shop-input")
+const shopInput = document.getElementById("cart-input")
 const shopList = document.getElementById("shopping-list")
 const todoSection = document.getElementById("to-do-section")
 const noteSection = document.getElementById("notes-section")
@@ -29,7 +29,7 @@ nav.addEventListener("click", function(e) {
 main.addEventListener("click", function(e) {
     const clicked = e.target.id
 
-    if (clicked === "shop-btn") {
+    if (clicked === "cart-btn") {
         addToCart()
     }
 })
@@ -57,6 +57,7 @@ function buttonClick(button) {
 function addToCart() {
     if (shopInput.value) {
         push(shoppingListInDB, shopInput.value)
+        shopInput.value = ""
     }
 }
 
