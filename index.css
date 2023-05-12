@@ -9,7 +9,7 @@ body {
     color: #432000;
 }
 
-#title {
+#title, h2 {
     text-align: center;
     font-size: 1.5rem;
 }
@@ -109,4 +109,8 @@ main {
 
 #cart-empty {
     margin: auto;
+}
+
+#bulk-section {
+
 }
