@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // firebase settings
 const appSettings = {
@@ -53,6 +53,7 @@ function buttonClick(button) {
 function addToCart() {
     if (shopInput.value) {
         console.log(shopInput.value)
+        push(shoppingListInDB, shopInput.value)
     }
 }
 
