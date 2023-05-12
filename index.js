@@ -52,12 +52,12 @@ main.addEventListener("click", function(e) {
 
     // if shopping cart button clicked
     if (clicked === "cart-btn") {
-        addToCart()
+        addToCart(clicked)
     }
 
     // if bulk cart button clicked
     if (clicked === "bulk-btn") {
-        addToBulk()
+        addToCart(clicked)
     }
 })
 
@@ -89,16 +89,29 @@ function buttonClick(button) {
 }
 
 // add item to shopping cart
-function addToCart() {
+function addToCart(type) {
+    let list = ""
+    let db = ""
+
+    if (type === "cart-btn") {
+        list = currentList
+        db = shoppingListInDB
+    }
+
+    if (type === "bulk-btn") {
+        list = currentBulkList
+        db = bulkListInDB
+    }
+
     // check for duplicates
-    if (currentList.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
+    if (list.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
         shopInput.value = ""
         return
     }
 
     // add to cart if not duplicate
     if (shopInput.value) {
-        push(shoppingListInDB, shopInput.value)
+        push(db, shopInput.value)
         shopInput.value = ""
     }
 }
