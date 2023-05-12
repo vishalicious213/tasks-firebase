@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // firebase settings
 const appSettings = {
@@ -68,6 +68,11 @@ function renderSection(section) {
         todoSection.classList.remove("show-section")
         noteSection.classList.add("hide-section")
         noteSection.classList.remove("show-section")
+
+        onValue(shoppingListInDB, function(snapshot) {
+            let cartArray = Object.entries(snapshot.val())
+            console.log(cartArray)
+        })
     }
 
     if (section === "todo") {
