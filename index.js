@@ -28,15 +28,15 @@ nav.addEventListener("click", function(e) {
 
 function buttonClick(button) {
     if (button === "shop-btn") {
-        renderShopping()
+        renderSection("shop")
     }
 
     if (button === "to-do-btn") {
-        renderToDoList()
+        renderSection("todo")
     }
 
     if (button === "notes-btn") {
-        renderNotes()
+        renderSection("note")
     }
 }
 
@@ -46,9 +46,44 @@ function clearMain() {
     main.innerHTML = ""
 }
 
+function renderSection(section) {
+    clearMain()
+
+    if (section === "shop") {
+        title.innerText = "Shopping List"
+        shopSection.classList.add("show-section")
+        shopSection.classList.remove("hide-section")
+        todoSection.classList.add("hide-section")
+        todoSection.classList.remove("show-section")
+        noteSection.classList.add("hide-section")
+        noteSection.classList.remove("show-section")
+    }
+
+    if (section === "todo") {
+        title.innerText = "To Do List"
+        todoSection.classList.add("show-section")
+        todoSection.classList.remove("hide-section")
+        shopSection.classList.add("hide-section")
+        shopSection.classList.remove("show-section")
+        noteSection.classList.add("hide-section")
+        noteSection.classList.remove("show-section")
+    }
+
+    if (section === "note") {
+        title.innerText = "Notes"
+        noteSection.classList.add("show-section")
+        noteSection.classList.remove("hide-section")
+        todoSection.classList.add("hide-section")
+        todoSection.classList.remove("show-section")
+        shopSection.classList.add("hide-section")
+        shopSection.classList.remove("show-section")
+    }
+}
+
 function renderShopping() {
     title.innerText = "Shopping List"
     clearMain()
+    shopSection.classList.add("show-section")
 }
 
 function renderToDoList() {
