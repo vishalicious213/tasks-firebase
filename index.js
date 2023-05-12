@@ -79,21 +79,3 @@ function renderSection(section) {
         shopSection.classList.remove("show-section")
     }
 }
-
-function renderShopping() {
-    title.innerText = "Shopping List"
-    clearMain()
-    shopSection.classList.add("show-section")
-}
-
-function renderToDoList() {
-    title.innerText = "To Do List"
-    clearMain()
-}
-
-function renderNotes() {
-    title.innerText = "Notes"
-    clearMain()
-}
-
-// renderShopping()
