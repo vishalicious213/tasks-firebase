@@ -27,9 +27,16 @@ let currentBulkList = []
 // ⬇️ HELPER FUNCTIONS ⬇️
 
 // keep a current list of item names (to check for duplicates)
-function updateCurrentList(list) {
-    currentList = []
-    list.forEach(item => currentList.push(item[1]))
+function updateCurrentList(type, items) {
+    if (type === "shop") {
+        currentList = []
+        items.forEach(item => currentList.push(item[1]))
+    }
+
+    if (type === "bulk") {
+        currentBulkList = []
+        items.forEach(item => currentBulkList.push(item[1]))
+    }
 }
 
 // keep a current list of bulk item names (to check for duplicates)
@@ -170,7 +177,7 @@ function renderSection(section) {
         onValue(shoppingListInDB, function(snapshot) {
             if (snapshot.exists()) {
                 let cartArray = Object.entries(snapshot.val())
-                updateCurrentList(cartArray)
+                updateCurrentList("shop", cartArray)
                 renderShoppingCart("shop", cartArray)
             } else {
                 shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
@@ -180,7 +187,7 @@ function renderSection(section) {
         onValue(bulkListInDB, function(snapshot) {
             if (snapshot.exists()) {
                 let bulkArray = Object.entries(snapshot.val())
-                updateCurrentBulkList(bulkArray)
+                updateCurrentList("bulk", bulkArray)
                 renderShoppingCart("bulk", bulkArray)
             } else {
                 bulkList.innerHTML = `<div id="cart-empty">Add an item to your bulk cart</div>`
