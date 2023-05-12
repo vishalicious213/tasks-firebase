@@ -35,7 +35,7 @@ main.addEventListener("click", function(e) {
 })
 
 shopList.addEventListener("dblclick", function(e) {
-    console.log(e.target.id)
+    removeFromCart(e.target.id)
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -58,6 +58,11 @@ function addToCart() {
     if (shopInput.value) {
         push(shoppingListInDB, shopInput.value)
     }
+}
+
+function removeFromCart(item) {
+    const itemToRemove = ref(database, `shopping-list/${item}`)
+    remove(itemToRemove)
 }
 
 // ⬇️ RENDER APP ⬇️
