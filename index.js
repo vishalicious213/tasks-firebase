@@ -11,8 +11,11 @@ const shoppingListInDB = ref(database, "shopping-list")
 
 // app elements
 const nav = document.getElementById("nav")
+const main = document.getElementById("main")
 const title = document.getElementById("title")
 const shopSection = document.getElementById("shop-section")
+const shopInput = document.getElementById("shop-input")
+const shopBtn = document.getElementById("shop-btn")
 const todoSection = document.getElementById("to-do-section")
 const noteSection = document.getElementById("notes-section")
 
@@ -21,6 +24,14 @@ const noteSection = document.getElementById("notes-section")
 nav.addEventListener("click", function(e) {
     const button = e.target.id
     buttonClick(button)
+})
+
+main.addEventListener("click", function(e) {
+    const clicked = e.target.id
+
+    if (clicked === "shop-btn") {
+        addToCart()
+    }
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -36,6 +47,12 @@ function buttonClick(button) {
 
     if (button === "notes-btn") {
         renderSection("note")
+    }
+}
+
+function addToCart() {
+    if (shopInput.value) {
+        console.log(shopInput.value)
     }
 }
 
