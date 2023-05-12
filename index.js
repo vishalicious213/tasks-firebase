@@ -63,6 +63,11 @@ function buttonClick(button) {
 }
 
 function addToCart() {
+    if (currentList.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
+        shopInput.value = ""
+        return
+    }
+
     if (shopInput.value) {
         push(shoppingListInDB, shopInput.value)
         shopInput.value = ""
