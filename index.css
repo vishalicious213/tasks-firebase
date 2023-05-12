@@ -69,3 +69,22 @@ main {
     background-color: #FFECC7;
     cursor: pointer;
 }
+
+#cart-input {
+
+}
+
+#cart-btn {
+    color: #FDFDFD;
+    background-color: #AC485A;
+    border: 0;
+    border-radius: .5rem;
+    padding: .25rem;
+    font-family: 'Rubik', sans-serif;
+    width: 100%;
+}
+
+#cart-btn:hover {
+    background-color: #432000;
+    cursor: pointer;
+}
