@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // firebase settings
 const appSettings = {
@@ -7,6 +7,7 @@ const appSettings = {
 }
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
+const shoppingListInDB = ref(database, "shopping-list")
 
 // app elements
 const nav = document.getElementById("nav")
