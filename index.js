@@ -39,12 +39,6 @@ function updateCurrentList(type, items) {
     }
 }
 
-// keep a current list of bulk item names (to check for duplicates)
-function updateCurrentBulkList(list) {
-    currentBulkList = []
-    list.forEach(item => currentBulkList.push(item[1]))
-}
-
 // ⬇️ EVENT LISTENERS ⬇️
 
 // listen for clicks on the navbar to load appropriate section
