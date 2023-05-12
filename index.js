@@ -42,13 +42,7 @@ function buttonClick(button) {
 
 // ⬇️ RENDER APP ⬇️
 
-function clearMain() {
-    main.innerHTML = ""
-}
-
 function renderSection(section) {
-    clearMain()
-
     if (section === "shop") {
         title.innerText = "Shopping List"
         shopSection.classList.add("show-section")
