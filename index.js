@@ -15,7 +15,7 @@ const main = document.getElementById("main")
 const title = document.getElementById("title")
 const shopSection = document.getElementById("shop-section")
 const shopInput = document.getElementById("shop-input")
-const shopBtn = document.getElementById("shop-btn")
+const shopList = document.getElementById("shopping-list")
 const todoSection = document.getElementById("to-do-section")
 const noteSection = document.getElementById("notes-section")
 
@@ -52,12 +52,26 @@ function buttonClick(button) {
 
 function addToCart() {
     if (shopInput.value) {
-        console.log(shopInput.value)
         push(shoppingListInDB, shopInput.value)
     }
 }
 
 // ⬇️ RENDER APP ⬇️
+
+function clearShoppingCart() {
+    shopList.innerHTML = ""
+}
+
+function renderShoppingCart(items) {
+    let itemsToRender = ""
+
+    items.forEach(item => {
+        itemsToRender += `<li id="${item[0]}">${item[1]}</li>`
+    })
+
+    clearShoppingCart()
+    shopList.innerHTML = itemsToRender
+}
 
 function renderSection(section) {
     if (section === "shop") {
@@ -71,7 +85,7 @@ function renderSection(section) {
 
         onValue(shoppingListInDB, function(snapshot) {
             let cartArray = Object.entries(snapshot.val())
-            console.log(cartArray)
+            renderShoppingCart(cartArray)
         })
     }
 
@@ -95,3 +109,5 @@ function renderSection(section) {
         shopSection.classList.remove("show-section")
     }
 }
+
+renderSection("shop")
