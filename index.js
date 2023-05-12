@@ -17,6 +17,7 @@ const title = document.getElementById("title")
 const shopSection = document.getElementById("shop-section")
 const shopInput = document.getElementById("cart-input")
 const shopList = document.getElementById("shopping-list")
+const bulkList = document.getElementById("bulk-list")
 const todoSection = document.getElementById("to-do-section")
 const noteSection = document.getElementById("notes-section")
 
@@ -45,6 +46,11 @@ main.addEventListener("click", function(e) {
     // if shopping cart button clicked
     if (clicked === "cart-btn") {
         addToCart()
+    }
+
+    // if bulk cart button clicked
+    if (clicked === "bulk-btn") {
+        addToBulk()
     }
 })
 
