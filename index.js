@@ -1,10 +1,12 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
+import { getDatabase } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // firebase settings
 const appSettings = {
     databaseURL: "https://tasks-firebase-706aa-default-rtdb.firebaseio.com/"
 }
 const app = initializeApp(appSettings)
+const database = getDatabase(app)
 
 // app elements
 const nav = document.getElementById("nav")
