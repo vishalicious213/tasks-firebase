@@ -63,7 +63,12 @@ main.addEventListener("click", function(e) {
 
 // listen for double-clicks on items in shopping cart to remove them
 shopList.addEventListener("dblclick", function(e) {
-    removeFromCart(e.target.id)
+    removeFromCart("shop", e.target.id)
+})
+
+// listen for double-clicks on items in bulk shopping cart to remove them
+bulkList.addEventListener("dblclick", function(e) {
+    removeFromCart("bulk", e.target.id)
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -99,9 +104,16 @@ function addToCart() {
 }
 
 // remove item from shopping cart
-function removeFromCart(item) {
-    const itemToRemove = ref(database, `shopping-list/${item}`)
-    remove(itemToRemove)
+function removeFromCart(type, item) {
+    if (type === "shop") {
+        const itemToRemove = ref(database, `shopping-list/${item}`)
+        remove(itemToRemove)
+    }
+
+    if (type === "bulk") {
+        const itemToRemove = ref(database, `bulk-list/${item}`)
+        remove(itemToRemove)
+    }
 }
 
 // add item to bulk shopping cart
