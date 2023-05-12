@@ -9,7 +9,7 @@ body {
     color: #432000;
 }
 
-#title, h2 {
+#title {
     text-align: center;
     font-size: 1.5rem;
 }
@@ -92,21 +92,32 @@ main {
     margin-bottom: .25rem;
 }
 
-#cart-btn {
+#buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+#cart-btn, #bulk-btn {
     color: #FDFDFD;
     background-color: #AC485A;
     border: 0;
     border-radius: .5rem;
-    padding: .25rem;
+    padding: .5rem .25rem;
     font-family: 'Rubik', sans-serif;
-    width: 100%;
+    width: 45%;
 }
 
-#cart-btn:hover {
+#cart-btn:hover, #bulk-btn:hover {
     background-color: #432000;
     cursor: pointer;
 }
 
 #cart-empty {
     margin: auto;
+}
+
+h2 {
+    text-align: center;
+    font-size: 1rem;
+    margin-top: 1.25rem;
 }
