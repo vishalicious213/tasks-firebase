@@ -47,6 +47,9 @@ function renderShopping() {
     clearMain()
 
     main.innerHTML = `
+        <input type="text" id="cart-input" placeholder="Bread">
+        <button id="cart-btn">Add to cart</button>
+
         <ul id="shopping-list">
             <li>item 1</li>
             <li>item 2</li>
