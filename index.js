@@ -129,21 +129,6 @@ function removeFromCart(type, item) {
     }
 }
 
-// add item to bulk shopping cart
-function addToBulk() {
-    // check for duplicates
-    if (currentBulkList.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
-        shopInput.value = ""
-        return
-    }
-
-    // add to bulk cart if not duplicate
-    if (shopInput.value) {
-        push(bulkListInDB, shopInput.value)
-        shopInput.value = ""
-    }
-}
-
 // ⬇️ RENDER APP ⬇️
 
 function clearShoppingCart() {
