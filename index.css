@@ -106,3 +106,7 @@ main {
     background-color: #432000;
     cursor: pointer;
 }
+
+#cart-empty {
+    margin: auto;
+}

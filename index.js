@@ -93,8 +93,12 @@ function renderSection(section) {
         noteSection.classList.remove("show-section")
 
         onValue(shoppingListInDB, function(snapshot) {
-            let cartArray = Object.entries(snapshot.val())
-            renderShoppingCart(cartArray)
+            if (snapshot.exists()) {
+                let cartArray = Object.entries(snapshot.val())
+                renderShoppingCart(cartArray)
+            } else {
+                shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
+            }
         })
     }
 
