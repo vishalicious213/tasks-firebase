@@ -1,5 +1,5 @@
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-app.js"
-import { getDatabase, ref, push, onValue } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
+import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-database.js"
 
 // firebase settings
 const appSettings = {
@@ -32,6 +32,10 @@ main.addEventListener("click", function(e) {
     if (clicked === "shop-btn") {
         addToCart()
     }
+})
+
+shopList.addEventListener("dblclick", function(e) {
+    console.log(e.target.id)
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
