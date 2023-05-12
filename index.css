@@ -7,6 +7,8 @@ body {
     margin: 0 auto;
 }
 
+/* NAV */
+
 nav {
     display: flex;
     justify-content: space-around;
@@ -19,4 +21,12 @@ nav button {
 
 nav button:hover {
     cursor: pointer;
+}
+
+/* MAIN */
+
+main {
+    outline: 1px solid whitesmoke;
+    margin-top: .5rem;
+    padding: .5rem;
 }
