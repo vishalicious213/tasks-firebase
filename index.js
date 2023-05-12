@@ -8,6 +8,7 @@ const appSettings = {
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shopping-list")
+let currentList = []
 
 // app elements
 const nav = document.getElementById("nav")
@@ -18,6 +19,13 @@ const shopInput = document.getElementById("cart-input")
 const shopList = document.getElementById("shopping-list")
 const todoSection = document.getElementById("to-do-section")
 const noteSection = document.getElementById("notes-section")
+
+// ⬇️ HELPER FUNCTIONS ⬇️
+
+function updateCurrentList(list) {
+    currentList = []
+    list.forEach(item => currentList.push(item[1]))
+}
 
 // ⬇️ EVENT LISTENERS ⬇️
 
@@ -96,6 +104,7 @@ function renderSection(section) {
         onValue(shoppingListInDB, function(snapshot) {
             if (snapshot.exists()) {
                 let cartArray = Object.entries(snapshot.val())
+                updateCurrentList(cartArray)
                 renderShoppingCart(cartArray)
             } else {
                 shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
