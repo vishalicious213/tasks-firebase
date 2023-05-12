@@ -20,6 +20,7 @@ nav.addEventListener("click", function(e) {
     const button = e.target.id
     buttonClick(button)
 })
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 function buttonClick(button) {
@@ -45,17 +46,6 @@ function clearMain() {
 function renderShopping() {
     title.innerText = "Shopping List"
     clearMain()
-
-    main.innerHTML = `
-        <input type="text" id="cart-input" placeholder="Bread">
-        <button id="cart-btn">Add to cart</button>
-
-        <ul id="shopping-list">
-            <li>item 1</li>
-            <li>item 2</li>
-            <li>item 3</li>
-        </ul>
-    `
 }
 
 function renderToDoList() {
@@ -68,4 +58,4 @@ function renderNotes() {
     clearMain()
 }
 
-renderShopping()
+// renderShopping()
