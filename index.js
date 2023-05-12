@@ -119,7 +119,7 @@ function removeFromCart(type, item) {
 // add item to bulk shopping cart
 function addToBulk() {
     // check for duplicates
-    if (currentList.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
+    if (currentBulkList.find(item => item.toLowerCase() === shopInput.value.toLowerCase())) {
         shopInput.value = ""
         return
     }
