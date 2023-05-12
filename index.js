@@ -12,16 +12,28 @@ nav.addEventListener("click", function(e) {
 
 function buttonClick(button) {
     if (button === "shop-btn") {
-        console.log("Shopping")
+        renderShopping()
     }
 
     if (button === "to-do-btn") {
-        console.log("To Do List")
+        renderToDoList()
     }
 
     if (button === "notes-btn") {
-        console.log("Notes")
+        renderNotes()
     }
 }
 
 // ⬇️ RENDER APP ⬇️
+
+function renderShopping() {
+    title.innerText = "Shopping List"
+}
+
+function renderToDoList() {
+    title.innerText = "To Do List"
+}
+
+function renderNotes() {
+    title.innerText = "Notes"
+}
