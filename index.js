@@ -11,7 +11,6 @@ const shoppingListInDB = ref(database, "shopping-list")
 
 // app elements
 const nav = document.getElementById("nav")
-const main = document.getElementById("main")
 const title = document.getElementById("title")
 const shopSection = document.getElementById("shop-section")
 const todoSection = document.getElementById("to-do-section")
