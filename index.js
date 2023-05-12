@@ -125,15 +125,26 @@ function clearShoppingCart() {
     shopList.innerHTML = ""
 }
 
-function renderShoppingCart(items) {
+function clearBulkShoppingCart() {
+    bulkList.innerHTML = ""
+}
+
+function renderShoppingCart(type, items) {
     let itemsToRender = ""
 
     items.forEach(item => {
         itemsToRender += `<li id="${item[0]}">${item[1]}</li>`
     })
 
-    clearShoppingCart()
-    shopList.innerHTML = itemsToRender
+    if (type === "shop") {
+        clearShoppingCart()
+        shopList.innerHTML = itemsToRender
+    }
+
+    if (type === "bulk") {
+        clearBulkShoppingCart()
+        bulkList.innerHTML = itemsToRender
+    }
 }
 
 function renderSection(section) {
@@ -150,7 +161,7 @@ function renderSection(section) {
             if (snapshot.exists()) {
                 let cartArray = Object.entries(snapshot.val())
                 updateCurrentList(cartArray)
-                renderShoppingCart(cartArray)
+                renderShoppingCart("shop", cartArray)
             } else {
                 shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
             }
@@ -160,7 +171,7 @@ function renderSection(section) {
             if (snapshot.exists()) {
                 let bulkArray = Object.entries(snapshot.val())
                 updateCurrentBulkList(bulkArray)
-                renderShoppingCart(bulkArray)
+                renderShoppingCart("bulk", bulkArray)
             } else {
                 bulkList.innerHTML = `<div id="cart-empty">Add an item to your bulk cart</div>`
             }
