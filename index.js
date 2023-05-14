@@ -23,6 +23,7 @@ const bulkList = document.getElementById("bulk-list")
 // to do list elements
 const todoSection = document.getElementById("to-do-section")
 const todoList = document.getElementById("to-do-list")
+const todoInput = document.getElementById("to-do-input")
 
 // notes elements
 const noteSection = document.getElementById("notes-section")
@@ -69,7 +70,7 @@ main.addEventListener("click", function(e) {
 
     // if to do list button clicked
     if (clicked === "to-do-list-btn") {
-        console.log(clicked)
+        addToTodoList()
     }
 })
 
@@ -138,6 +139,14 @@ function removeFromCart(type, item) {
     if (type === "bulk") {
         const itemToRemove = ref(database, `bulk-list/${item}`)
         remove(itemToRemove)
+    }
+}
+
+// add item to to-do list
+function addToTodoList() {
+    if (todoInput.value) {
+        push(todoListInDB, todoInput.value)
+        todoInput.value = ""
     }
 }
 
