@@ -84,6 +84,12 @@ bulkList.addEventListener("dblclick", function(e) {
     removeFromCart("bulk", e.target.id)
 })
 
+// listen for double-clicks on items in todo list to remove them
+todoList.addEventListener("dblclick", function(e) {
+    // removeFromCart("bulk", e.target.id)
+    console.log(e.target.innerText)
+})
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 // load section that was clicked (shop, todo, notes)
