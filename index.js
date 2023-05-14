@@ -9,6 +9,7 @@ const app = initializeApp(appSettings)
 const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shopping-list")
 const bulkListInDB = ref(database, "bulk-list")
+const todoListInDB = ref(database, "todo-list")
 
 // shopping list elements
 const nav = document.getElementById("nav")
@@ -21,6 +22,7 @@ const bulkList = document.getElementById("bulk-list")
 
 // to do list elements
 const todoSection = document.getElementById("to-do-section")
+const todoList = document.getElementById("to-do-list")
 
 // notes elements
 const noteSection = document.getElementById("notes-section")
@@ -162,6 +164,17 @@ function renderShoppingCart(type, items) {
     }
 }
 
+function renderTodoList(items) {
+    let itemsToRender = ""
+
+    items.forEach(item => {
+        itemsToRender += `<li id="${item[0]}">${item[1]}</li>`
+    })
+
+    todoList.innerHTML = ""
+    todoList.innerHTML = itemsToRender
+}
+
 function renderSection(section) {
     if (section === "shop") {
         title.innerText = "Shopping List"
@@ -214,4 +227,4 @@ function renderSection(section) {
     }
 }
 
-renderSection("shop")
+renderSection("todo")
