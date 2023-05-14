@@ -77,7 +77,7 @@ main.addEventListener("click", function(e) {
 
     // if note button clicked
     if (clicked === "note-btn") {
-        console.log(clicked)
+        addToNotes()
     }
 })
 
@@ -166,6 +166,15 @@ function addToTodoList() {
 function removeFromTodoList(item) {
     const itemToRemove = ref(database, `todo-list/${item}`)
     remove(itemToRemove)
+}
+
+// add item to notes list
+function addToNotes() {
+    console.log("note")
+    // if (todoInput.value) {
+    //     push(todoListInDB, todoInput.value)
+    //     todoInput.value = ""
+    // }
 }
 
 // ⬇️ RENDER APP ⬇️
