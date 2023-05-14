@@ -171,11 +171,10 @@ function removeFromTodoList(item) {
 
 // add item to notes list
 function addToNotes() {
-    console.log("note")
-    // if (todoInput.value) {
-    //     push(todoListInDB, todoInput.value)
-    //     todoInput.value = ""
-    // }
+    if (noteInput.value) {
+        push(notesListInDB, noteInput.value)
+        noteInput.value = ""
+    }
 }
 
 // ⬇️ RENDER APP ⬇️
