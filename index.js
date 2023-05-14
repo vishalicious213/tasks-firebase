@@ -66,6 +66,11 @@ main.addEventListener("click", function(e) {
     if (clicked === "bulk-btn") {
         addToCart(clicked)
     }
+
+    // if to do list button clicked
+    if (clicked === "to-do-list-btn") {
+        console.log(clicked)
+    }
 })
 
 // listen for double-clicks on items in shopping cart to remove them
