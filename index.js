@@ -86,8 +86,7 @@ bulkList.addEventListener("dblclick", function(e) {
 
 // listen for double-clicks on items in todo list to remove them
 todoList.addEventListener("dblclick", function(e) {
-    // removeFromCart("bulk", e.target.id)
-    console.log(e.target.innerText)
+    removeFromTodoList(e.target.id)
 })
 
 // ⬇️ EVENT HANDLERS ⬇️
@@ -154,6 +153,12 @@ function addToTodoList() {
         push(todoListInDB, todoInput.value)
         todoInput.value = ""
     }
+}
+
+// remove item from todo list
+function removeFromTodoList(item) {
+    const itemToRemove = ref(database, `todo-list/${item}`)
+    remove(itemToRemove)
 }
 
 // ⬇️ RENDER APP ⬇️
