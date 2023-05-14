@@ -234,7 +234,7 @@ function renderSection(section) {
                 let todoItems = Object.entries(snapshot.val())
                 renderTodoList(todoItems)
             } else {
-                todoList.innerHTML = `<div id="cart-empty">Add a task to your list</div>`
+                todoList.innerHTML = `<div id="todo-list-empty">Add a task to your list</div>`
             }
         })
     }
