@@ -15,11 +15,11 @@ body {
 }
 
 .hide-section {
-    visibility: hidden;
+    display: none;
 }
 
 .show-section {
-    visibility: visible;
+    display: block;
 }
 
 /* NAV */
@@ -50,6 +50,7 @@ nav button:hover {
 main {
     margin-top: .5rem;
     padding: 0 .5rem;
+    
 }
 
 /* SHOPPING LIST */
@@ -122,4 +123,12 @@ h2 {
     margin-top: 1.25rem;
     padding-top: .5rem;
     border-top: 1px solid whitesmoke;
+}
+
+/* TO DO LIST */
+
+#to-do-section {
+    border: 1px solid red;
+    /* display: flex;
+    align-items: start; */
 }

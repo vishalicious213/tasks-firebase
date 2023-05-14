@@ -10,7 +10,7 @@ const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shopping-list")
 const bulkListInDB = ref(database, "bulk-list")
 
-// app elements
+// shopping list elements
 const nav = document.getElementById("nav")
 const main = document.getElementById("main")
 const title = document.getElementById("title")
@@ -18,7 +18,11 @@ const shopSection = document.getElementById("shop-section")
 const shopInput = document.getElementById("cart-input")
 const shopList = document.getElementById("shopping-list")
 const bulkList = document.getElementById("bulk-list")
+
+// to do list elements
 const todoSection = document.getElementById("to-do-section")
+
+// notes elements
 const noteSection = document.getElementById("notes-section")
 
 let currentList = []
