@@ -261,4 +261,4 @@ function renderSection(section) {
     }
 }
 
-renderSection("todo")
+renderSection("note")
