@@ -78,7 +78,7 @@ main.addEventListener("click", function(e) {
 
     // if note button clicked
     if (clicked === "note-btn") {
-        addToNotes()
+        addToNotesList()
     }
 })
 
@@ -170,11 +170,17 @@ function removeFromTodoList(item) {
 }
 
 // add item to notes list
-function addToNotes() {
+function addToNotesList() {
     if (noteInput.value) {
         push(notesListInDB, noteInput.value)
         noteInput.value = ""
     }
+}
+
+// remove item from notes list
+function removeFromNotesList(item) {
+    const itemToRemove = ref(database, `notes-list/${item}`)
+    remove(itemToRemove)
 }
 
 // ⬇️ RENDER APP ⬇️
