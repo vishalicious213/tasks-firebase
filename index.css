@@ -24,7 +24,7 @@ body {
 
 /* MULTIPLE SECTION ELEMENTS */
 
-#cart-input, #to-do-input {
+#cart-input, #to-do-input, #note-input {
     color: #432000;
     background-color: #DCE1EB;
     border: 0;
@@ -152,3 +152,6 @@ h2 {
     text-align: center;
     margin-left: -2.5rem;
 }
+
+/* NOTES LIST */
+
