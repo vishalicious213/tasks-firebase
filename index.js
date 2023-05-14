@@ -97,6 +97,11 @@ todoList.addEventListener("dblclick", function(e) {
     removeFromTodoList(e.target.id)
 })
 
+// listen for double-clicks on items in notes list to remove them
+noteList.addEventListener("dblclick", function(e) {
+    removeFromNotesList(e.target.id)
+})
+
 // ⬇️ EVENT HANDLERS ⬇️
 
 // load section that was clicked (shop, todo, notes)
