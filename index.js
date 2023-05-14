@@ -228,6 +228,15 @@ function renderSection(section) {
         shopSection.classList.remove("show-section")
         noteSection.classList.add("hide-section")
         noteSection.classList.remove("show-section")
+
+        onValue(todoListInDB, function(snapshot) {
+            if (snapshot.exists()) {
+                let todoItems = Object.entries(snapshot.val())
+                renderTodoList(todoItems)
+            } else {
+                todoList.innerHTML = `<div id="cart-empty">Add a task to your list</div>`
+            }
+        })
     }
 
     if (section === "note") {
