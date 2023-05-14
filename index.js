@@ -10,6 +10,7 @@ const database = getDatabase(app)
 const shoppingListInDB = ref(database, "shopping-list")
 const bulkListInDB = ref(database, "bulk-list")
 const todoListInDB = ref(database, "todo-list")
+const notesListInDB = ref(database, "notes-list")
 
 // shopping list elements
 const nav = document.getElementById("nav")
