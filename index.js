@@ -27,6 +27,8 @@ const todoInput = document.getElementById("to-do-input")
 
 // notes elements
 const noteSection = document.getElementById("notes-section")
+const noteList = document.getElementById("note-list")
+const noteInput = document.getElementById("note-input")
 
 let currentList = []
 let currentBulkList = []
