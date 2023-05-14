@@ -52,6 +52,19 @@ body {
     width: 100%;
 }
 
+#to-do-section ul, #notes-section ul {
+    font-size: .8rem;
+    line-height: 1.25rem;
+}
+
+#to-do-list li, #note-list li {
+    margin-bottom: .5rem;
+}
+
+#todo-list-empty, #note-list-empty {
+    text-align: center;
+}
+
 #cart-btn:hover, #bulk-btn:hover, #to-do-list-btn:hover, #note-btn:hover {
     background-color: #432000;
     cursor: pointer;
@@ -133,25 +146,20 @@ h2 {
 
 /* TO DO LIST */
 
-#to-do-section ul {
-    font-size: .8rem;
-    line-height: 1.25rem;
-}
-
 #to-do-list {
     list-style: none;
     padding: .5rem 0 0;
     border-top: 1px solid whitesmoke;
 }
 
-#to-do-list li {
-    margin-bottom: .5rem;
-}
-
-#todo-list-empty {
-    text-align: center;
-    margin-left: -2.5rem;
-}
-
 /* NOTES LIST */
 
+#note-list {
+    list-style: none;
+    padding: .5rem 0 0;
+}
+
+#note-list li {
+    border-top: 1px solid whitesmoke;
+    padding-top: .5rem;
+}

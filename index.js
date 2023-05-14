@@ -303,7 +303,7 @@ function renderSection(section) {
             let noteItems = Object.entries(snapshot.val())
             renderNotesList(noteItems)
         } else {
-            noteList.innerHTML = `<div id="todo-list-empty">Add a note</div>`
+            noteList.innerHTML = `<div id="note-list-empty">Add a note</div>`
         }
     })
 }
