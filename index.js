@@ -217,6 +217,17 @@ function renderTodoList(items) {
     todoList.innerHTML = itemsToRender
 }
 
+function renderNotesList(items) {
+    let itemsToRender = ""
+
+    items.forEach(item => {
+        itemsToRender += `<li id="${item[0]}">${item[1]}</li>`
+    })
+
+    noteList.innerHTML = ""
+    noteList.innerHTML = itemsToRender
+}
+
 function renderSection(section) {
     if (section === "shop") {
         title.innerText = "Shopping List"
