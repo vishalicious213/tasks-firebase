@@ -74,6 +74,11 @@ main.addEventListener("click", function(e) {
     if (clicked === "to-do-list-btn") {
         addToTodoList()
     }
+
+    // if note button clicked
+    if (clicked === "note-btn") {
+        console.log(clicked)
+    }
 })
 
 // listen for double-clicks on items in shopping cart to remove them
