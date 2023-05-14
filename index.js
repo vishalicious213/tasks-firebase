@@ -276,6 +276,15 @@ function renderSection(section) {
         shopSection.classList.add("hide-section")
         shopSection.classList.remove("show-section")
     }
+
+    onValue(notesListInDB, function(snapshot) {
+        if (snapshot.exists()) {
+            let noteItems = Object.entries(snapshot.val())
+            renderNotesList(noteItems)
+        } else {
+            noteList.innerHTML = `<div id="todo-list-empty">Add a note</div>`
+        }
+    })
 }
 
 renderSection("note")
