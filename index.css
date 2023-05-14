@@ -22,6 +22,21 @@ body {
     display: block;
 }
 
+#cart-btn, #bulk-btn, #to-do-list-btn {
+    color: #FDFDFD;
+    background-color: #AC485A;
+    border: 0;
+    border-radius: .5rem;
+    padding: .5rem .25rem;
+    font-family: 'Rubik', sans-serif;
+    width: 45%;
+}
+
+#cart-btn:hover, #bulk-btn:hover, #to-do-list-btn:hover {
+    background-color: #432000;
+    cursor: pointer;
+}
+
 /* NAV */
 
 nav {
@@ -98,21 +113,6 @@ main {
     justify-content: space-around;
 }
 
-#cart-btn, #bulk-btn {
-    color: #FDFDFD;
-    background-color: #AC485A;
-    border: 0;
-    border-radius: .5rem;
-    padding: .5rem .25rem;
-    font-family: 'Rubik', sans-serif;
-    width: 45%;
-}
-
-#cart-btn:hover, #bulk-btn:hover {
-    background-color: #432000;
-    cursor: pointer;
-}
-
 #cart-empty {
     margin: auto;
 }
@@ -127,8 +127,12 @@ h2 {
 
 /* TO DO LIST */
 
-#to-do-section {
-    border: 1px solid red;
-    /* display: flex;
-    align-items: start; */
+#to-do-section ul {
+    font-size: .8rem;
+    line-height: 1.25rem;
+}
+
+#to-do-list-btn {
+    width: 100%;
+    margin-top: .25rem;
 }
