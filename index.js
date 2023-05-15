@@ -82,6 +82,23 @@ main.addEventListener("click", function(e) {
     }
 })
 
+// listen for enter key to be pressed on inputs in main container
+main.addEventListener("keypress", function(e) {
+    const inputFieldID = e.target.id
+
+    if (inputFieldID === "cart-input") {
+        console.log("cart input")
+    }
+
+    if (inputFieldID === "to-do-input") {
+        console.log("todo input")
+    }
+
+    if (inputFieldID === "note-input") {
+        console.log("note input")
+    }
+})
+
 // listen for double-clicks on items in shopping cart to remove them
 shopList.addEventListener("dblclick", function(e) {
     removeFromCart("shop", e.target.id)
