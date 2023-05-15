@@ -278,6 +278,12 @@ function renderSection(section) {
                 renderShoppingCart("shop", cartArray)
             } else {
                 shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
+                shopList.innerHTML = `
+                    <div class="empty-list">
+                        <img src="/img/peach-and-goma-shopping.jpg">
+                        <div id="todo-list-empty">Add an item to your cart</div>
+                    <div>
+                `
             }
         })
 
