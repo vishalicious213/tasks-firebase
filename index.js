@@ -277,7 +277,6 @@ function renderSection(section) {
                 updateCurrentList("shop", cartArray)
                 renderShoppingCart("shop", cartArray)
             } else {
-                shopList.innerHTML = `<div id="cart-empty">Add an item to your cart</div>`
                 shopList.innerHTML = `
                     <div class="empty-list">
                         <img src="/img/peach-and-goma-shopping.jpg">
@@ -293,7 +292,12 @@ function renderSection(section) {
                 updateCurrentList("bulk", bulkArray)
                 renderShoppingCart("bulk", bulkArray)
             } else {
-                bulkList.innerHTML = `<div id="cart-empty">Add an item to your bulk cart</div>`
+                bulkList.innerHTML = `
+                <div class="empty-list">
+                    <img src="/img/peach-and-goma-bulk.jpg">
+                    <div id="todo-list-empty">Add an item to your bulk cart</div>
+                <div>
+            `
             }
         })
     }
