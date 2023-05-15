@@ -87,15 +87,21 @@ main.addEventListener("keypress", function(e) {
     const inputFieldID = e.target.id
 
     if (inputFieldID === "cart-input") {
-        console.log("cart input")
+        if (shopInput.value && e.key === "Enter") {
+            addToCart("cart-btn")
+        }
     }
 
     if (inputFieldID === "to-do-input") {
-        console.log("todo input")
+        if (todoInput.value && e.key === "Enter") {
+            addToTodoList()
+        }
     }
 
     if (inputFieldID === "note-input") {
-        console.log("note input")
+        if (noteInput.value && e.key === "Enter") {
+            addToNotesList()
+        }
     }
 })
 
