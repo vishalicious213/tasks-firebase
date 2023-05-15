@@ -1,7 +1,6 @@
 body {
-    outline: 1px solid whitesmoke;
     margin: 0;
-    padding: 0;
+    padding: 0 0 1rem;
     box-sizing: border-box;
     max-width: 320px;
     margin: 0 auto;

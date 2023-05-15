@@ -355,4 +355,4 @@ function renderSection(section) {
     })
 }
 
-renderSection("note")
+renderSection("shop")
