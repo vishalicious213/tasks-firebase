@@ -3,7 +3,8 @@ import { getDatabase, ref, push, onValue, remove } from "https://www.gstatic.com
 
 // firebase settings
 const appSettings = {
-    databaseURL: "https://tasks-firebase-706aa-default-rtdb.firebaseio.com/"
+    // databaseURL: "https://tasks-firebase-706aa-default-rtdb.firebaseio.com/"
+    databaseURL: "https://public-task-list-613e8-default-rtdb.firebaseio.com/"
 }
 const app = initializeApp(appSettings)
 const database = getDatabase(app)
