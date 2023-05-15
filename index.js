@@ -306,7 +306,12 @@ function renderSection(section) {
                 let todoItems = Object.entries(snapshot.val())
                 renderTodoList(todoItems)
             } else {
-                todoList.innerHTML = `<div id="todo-list-empty">Add a task to your list</div>`
+                todoList.innerHTML = `
+                    <div class="empty-list">
+                        <img src="/img/peach-and-goma-todo.webp">
+                        <div id="todo-list-empty">Add a task to your list</div>
+                    <div>
+                `
             }
         })
     }

@@ -22,6 +22,10 @@ body {
     display: block;
 }
 
+.empty-list img {
+    width: 100%;
+}
+
 /* MULTIPLE SECTION ELEMENTS */
 
 #cart-input, #to-do-input, #note-input {
