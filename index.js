@@ -281,6 +281,7 @@ function renderSection(section) {
                     <div class="empty-list">
                         <img src="/img/peach-and-goma-shopping.jpg">
                         <div id="todo-list-empty">Add an item to your cart</div>
+                        <div id="todo-list-empty">Double-tap an item to remove it</div>
                     <div>
                 `
             }
@@ -296,6 +297,7 @@ function renderSection(section) {
                 <div class="empty-list">
                     <img src="/img/peach-and-goma-bulk.jpg">
                     <div id="todo-list-empty">Add an item to your bulk cart</div>
+                    <div id="todo-list-empty">Double-tap an item to remove it</div>
                 <div>
             `
             }
@@ -320,6 +322,7 @@ function renderSection(section) {
                     <div class="empty-list">
                         <img src="/img/peach-and-goma-todo.webp">
                         <div id="todo-list-empty">Add a task to your list</div>
+                        <div id="todo-list-empty">Double-tap a task to remove it</div>
                     <div>
                 `
             }
@@ -345,6 +348,7 @@ function renderSection(section) {
                 <div class="empty-list">
                     <img src="/img/peach-and-goma-notes.jpg">
                     <div id="todo-list-empty">Add a note</div>
+                    <div id="todo-list-empty">Double-tap a note to remove it</div>
                 <div>
             `
         }
