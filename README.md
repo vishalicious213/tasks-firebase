@@ -11,3 +11,5 @@ The shopping list will be separated into a general section and a bulk (Costco) s
 Public deploy: https://vish213-task-list.netlify.app/
 
 There's another deploy that my family actually uses. The one above is for public consumption.
+
+![](./img/screenshot.jpg)
