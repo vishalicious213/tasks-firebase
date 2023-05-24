@@ -50,3 +50,14 @@ Public deploy: https://vish213-task-list.netlify.app/
 - return
 - string template literals
 - Object.entries
+
+## Firebase concepts
+
+- getDatabase
+- ref
+- push
+- onValue
+    - snapshot
+        - .exists()
+        - .val()
+- remove
